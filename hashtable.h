@@ -1,15 +1,22 @@
-#include "hashtable.h"
+#ifndef HASHTABLE_H
+#define HASHTABLE_H
+#include "indexinterface.h"
 
-hashtable::hashtable()
+
+class hashtable : public IndexInterface
 {
+public:
+    hashtable();
+    std::vector<int> get(std::string);
+    void put(std::string, int);
+    int getTotalPuts();
 
-    //initialize an arry of 26 elements
-    //impliment element on to an AVL tree
 
-}
+private:
+    IndexInterface* hashIndex[26];
+    int wordCounter;
 
 
-hashtable::getTotalPuts()
-{
-    return wordCounter;
-}
+};
+
+#endif // HASHTABLE_H
