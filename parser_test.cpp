@@ -14,7 +14,7 @@ int main(){
   string title, author, timestamp, text;
   int ns;
 
-  if (!doc.load_file("data/enwikibooks-latest-pages-meta-current.xml")) return -1;
+  if (!doc.load_file("enwikibooks-latest-pages-meta-current.xml")) return -1;
 
   xml_node root = doc.child("mediawiki");
 
