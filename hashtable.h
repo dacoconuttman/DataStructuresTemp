@@ -1,6 +1,10 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 #include "indexinterface.h"
+#include <vector>
+#include "word.h"
+
+
 
 
 class hashtable : public IndexInterface
@@ -8,7 +12,7 @@ class hashtable : public IndexInterface
 public:
     hashtable();
     std::vector<int> get(std::string);
-    void put(std::string, int);
+    void put(word);
     int getTotalPuts();
 
 
