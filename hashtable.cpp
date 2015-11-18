@@ -1,22 +1,38 @@
-#ifndef HASHTABLE_H
-#define HASHTABLE_H
-#include "indexinterface.h"
+#include <iostream>
+#include "hashtable.h"
 
+using namespace std;
 
-class hashtable : public IndexInterface
+hashtable::hashtable()
 {
-public:
-    hashtable();
-    std::vector<int> get(std::string);
-    void put(std::string, int);
-    int getTotalPuts();
+
+    //initialize an arry of 26 elements
+    //impliment element on to an AVL tree
 
 
-private:
-    IndexInterface* hashIndex[26];
-    int wordCounter;
+}
 
+//Pull some shit outta this
+vector<int> hashtable::get(string)
+{
 
-};
+}
 
-#endif // HASHTABLE_H
+//Throw this shit in here
+void hashtable::put(word)
+{
+
+}
+
+// De-allocates all memory used for the Hash Table.
+hashtable::~hashtable()
+{
+    //Delete each AVL tree first
+    delete [] array;
+}
+
+//a counter to see how many words are in the total ammount
+hashtable::getTotalPuts()
+{
+    return wordCounter;
+}
