@@ -3,6 +3,7 @@
 #include "indexinterface.h"
 #include <vector>
 #include "word.h"
+#include "linkedlistnode.h"
 
 
 
@@ -11,13 +12,14 @@ class hashtable : public IndexInterface
 {
 public:
     hashtable();
+    ~hashtable();
     std::vector<int> get(std::string);
-    void put(word);
+    void put(Word*);
     int getTotalPuts();
 
 
 private:
-    IndexInterface* hashIndex[26];
+    LinkedListNode* hashIndex[26];
     int wordCounter;
 
 
