@@ -7,8 +7,8 @@ class Word
 {
 public:
 
-    vector<int> articles;
-    char* word;
+    std::vector<int> articles;
+    std::string word;
 
 };
 
