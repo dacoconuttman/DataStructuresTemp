@@ -1,5 +1,6 @@
 #include <iostream>
 #include "hashtable.h"
+#include "word.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ hashtable::hashtable()
 //Pull some shit outta this
 vector<int> hashtable::get(string toSearch)
 {
+
+  cout << "cash money" << endl;
     int pos = toSearch[0];
     pos = pos % 25;
 

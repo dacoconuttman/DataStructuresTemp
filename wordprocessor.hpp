@@ -3,6 +3,8 @@
 
 #include "article.hpp"
 #include "porter2_stemmer.h"
+#include "word.h"
+#include "indexinterface.h"
 #include <functional>
 #include <unordered_map>
 #include <vector>
@@ -22,11 +24,11 @@ private:
   void removeNonAlphaChars(string& s);
 
 public:
-  WordProcessor();
- WordProcessor(vector<Article>* vec, IndexInterface* ix);
+  // WordProcessor();
+  WordProcessor(vector<Article>* vec, IndexInterface* ix);
 
   void setArticles(vector<Article>* vec);
- void setIndex(IndexInterface ix);
+  void setIndex(IndexInterface* ix);
 
   void processWords();
 };

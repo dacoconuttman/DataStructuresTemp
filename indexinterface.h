@@ -2,7 +2,7 @@
 #define INDEXINTERFACE
 #include <iostream>
 #include <vector>
-#include <word.h>
+#include "word.h"
 
 class IndexInterface
 {
@@ -17,21 +17,21 @@ class IndexInterface
     //into page number vector from Word that is already in data structure.
     virtual void put(Word *) =0;
 
-    //Takes data structure and prints to file on disk
-    virtual void dumptoFile() =0;
-
-    //Takes file from disk and inserts to data structure
-    virtual void pullfromFile() =0;
-
-    //Clears data structure
-    virtual void deleteAll() =0;
+    // //Takes data structure and prints to file on disk
+    // virtual void dumptoFile() =0;
+    //
+    // //Takes file from disk and inserts to data structure
+    // virtual void pullfromFile() =0;
+    //
+    // //Clears data structure
+    // virtual void deleteAll() =0;
 
     //Return count of total puts (insertions)
     virtual int getTotalPuts() =0;
 
     //Searches for String with value of word
     //returns pointer to vector of ints which contains article numbers
-    vector<int>* get(String wordToFind);
+    vector<int>* get(string wordToFind);
 
    private:
 

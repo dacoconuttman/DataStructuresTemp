@@ -1,38 +1,31 @@
-#include <iostream>
-#include "avltree.h"
-#include "word.h"
+#include "wordprocessor.hpp"
+#include "article.hpp"
+#include "parser.hpp"
+#include "porter2_stemmer.h"
+#include "hashtable.h"
+#include "linkedlistnode.h"
+#include "indexinterface.h"
+#include <functional>
+#include <unordered_map>
+#include <vector>
+#include <sstream>
+#include <algorithm>
+#include <cctype>
+
 using namespace std;
 
-    // Test program
-int main( )
-{
+int main(){
 
-    AvlTree <Word> indexer;
+  IndexInterface* ix = new hashtable;
 
-    Word word1;
+  Parser p("enwikibooks-latest-pages-meta-current.xml");
+  vector<Article>* articles;
+  articles = p.getArticles();
 
-    word1.word = "dog";
-    word1.articles.push_back(0);
+  WordProcessor wp(articles, ix);
 
-    indexer.insert(word1);
+  wp.processWords();
 
-
-    Word word2;
-
-    word2.word = "apple";
-    word2.articles.push_back(0);
-
-    indexer.insert(word2);
-
-
-    Word word3;
-
-    word3.word = "cartoon";
-    word3.articles.push_back(0);
-
-    indexer.insert(word3);
-
-
-    indexer.printTree();
+  cout << "Total puts: " << ix->getTotalPuts();
 
 }
