@@ -6,29 +6,33 @@ using namespace std;
     // Test program
 int main( )
 {
-    AvlTree<int> t, t2;
-    int NUMS = 400000;
-    const int GAP  =   37;
-    int i;
 
-    cout << "Checking... (no more output means success)" << endl;
+    AvlTree <Word> indexer;
 
-    for( i = GAP; i != 0; i = ( i + GAP ) % NUMS )
-        t.insert( i );
+    Word word1;
 
-    if( NUMS < 40 )
-        t.printTree( );
-    if( t.findMin( ) != 1 || t.findMax( ) != NUMS - 1 )
-        cout << "FindMin or FindMax error!" << endl;
+    word1.word = "dog";
+    word1.articles.push_back(0);
 
-    t2 = t;
+    indexer.insert(word1);
 
-    for( i = 1; i < NUMS; i++ )
-        if( !t2.contains( i ) )
-            cout << "Find error1!" << endl;
-    if( t2.contains( 0 ) )
-        cout << "ITEM_NOT_FOUND failed!" << endl;
 
-    cout << "Test finished" << endl;
-    return 0;
+    Word word2;
+
+    word2.word = "apple";
+    word2.articles.push_back(0);
+
+    indexer.insert(word2);
+
+
+    Word word3;
+
+    word3.word = "cartoon";
+    word3.articles.push_back(0);
+
+    indexer.insert(word3);
+
+
+    indexer.printTree();
+
 }

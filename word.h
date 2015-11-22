@@ -1,6 +1,6 @@
 #ifndef WORD_H
 #include <vector>
-#include <string>>
+#include <string>
 #define WORD_H
 
 using namespace std;
@@ -12,6 +12,26 @@ public:
 
     vector<int> articles;
     string word;
+
+    bool operator <(Word & word2) const
+    {
+        int result = this->word.compare(word2.word);
+
+        if (result < 0)
+        {return true;}
+        else
+            return false;
+    }
+
+
+    bool operator >(Word & word2) const
+    {
+        int result = this->word.compare(word2.word);
+        if (result > 0)
+        {return true;}
+        else
+            return false;
+    }
 
 };
 

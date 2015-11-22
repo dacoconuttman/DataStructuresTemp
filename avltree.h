@@ -100,7 +100,7 @@ class AvlTree
     /**
      * Insert x into the tree; duplicates are ignored.
      */
-    void insert( const Comparable & x )
+    void insert(Comparable & x )
     {
         insert( x, root );
     }
@@ -149,7 +149,7 @@ class AvlTree
      * t is the node that roots the subtree.
      * Set the new root of the subtree.
      */
-    void insert( const Comparable & x, AvlNode * & t )
+    void insert(Comparable & x, AvlNode * & t )
     {
         if( t == NULL )
             t = new AvlNode( x, NULL, NULL );
@@ -157,22 +157,26 @@ class AvlTree
         {
             insert( x, t->left );
             if( height( t->left ) - height( t->right ) == 2 )
+            {
                 if( x < t->left->element )
                     rotateWithLeftChild( t );
                 else
                     doubleWithLeftChild( t );
+            }
         }
         else if( t->element < x )
         {
             insert( x, t->right );
             if( height( t->right ) - height( t->left ) == 2 )
+            {
                 if( t->right->element < x )
                     rotateWithRightChild( t );
                 else
                     doubleWithRightChild( t );
+            }
         }
         else
-            ;  // Duplicate; do nothing
+            cout << "Fuck the police" << endl;  // Duplicate; combine the vectors
         t->height = max( height( t->left ), height( t->right ) ) + 1;
     }
 
@@ -255,7 +259,9 @@ class AvlTree
         if( t != NULL )
         {
             printTree( t->left );
-            cout << t->element << endl;
+            cout << t->element.word << endl;
+            //fix this later
+
             printTree( t->right );
         }
     }

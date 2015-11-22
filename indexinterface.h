@@ -29,6 +29,10 @@ class IndexInterface
     //Return count of total puts (insertions)
     virtual int getTotalPuts() =0;
 
+    //Searches for String with value of word
+    //returns pointer to vector of ints which contains article numbers
+    vector<int>* get(String wordToFind);
+
    private:
 
 };
