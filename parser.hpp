@@ -11,7 +11,6 @@
 #include "article.hpp"
 
 using namespace std;
-using namespace pugi;
 
 class Parser{
 private:
@@ -27,7 +26,7 @@ public:
 
   //passes the pointer to the vector of articles
   //returns a nullptr if cannot load the file
-  const vector<Article>* getArticles();
+  vector<Article>* getArticles();
 
   // ~Parser();
 };
