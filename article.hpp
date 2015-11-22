@@ -1,7 +1,7 @@
 #ifndef ARTICLE_HPP
 #define ARTICLE_HPP
 #include <string>
-#include <ios>
+#include <iostream>
 
 using namespace std;
 
