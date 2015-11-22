@@ -10,7 +10,7 @@ class IndexInterface
     // pure virtual functions
 
     //Get vector of page numbers based on string value
-    virtual std::vector<int> get(std::string) =0;
+    //virtual std::vector<int> get(std::string) =0;
 
     //Inserts word into data structure (if it doesn't exist already).
     //If already exists, then page numbers from incoming word will be merged
